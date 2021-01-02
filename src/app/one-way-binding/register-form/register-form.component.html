@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+            <h1 *ngIf="!status">Register Forms</h1>
+            <div class="form-group">
+                <p>Email</p>
+                <input type="text" class="form-control" placeholder="Nhập email" #txtName />
+            </div>
+            <div class="form-group">
+                <p>Password</p>
+                <input type="text" #txtPassword class="form-control" placeholder="Nhập tên" [(ngModel)]="fullName" />
+            </div>
+
+            <!-- </br> -->
+            <button class="btn btn-success" (click)="ChangeEmail(txtName.value)">Submit</button>
+        </div>
+        <div class="col-4">
+            <p>Email: <span>{{email}}</span></p>
+            <p>Full Name: {{fullName}}</p>
+        </div>
+    </div>
+</div>

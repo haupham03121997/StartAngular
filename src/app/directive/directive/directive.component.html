@@ -1,0 +1,24 @@
+<div *ngIf="status; else login">
+    Đã đăng nhập
+    <button (click)="ChangeStatusHidden()">Đăng xuất</button>
+</div>
+
+<!-- <button    (click)="ChangeStatusHidden()">Click me hidden</button> > -->
+<!-- <button (click)="ChangeStatusShow()">Click me hidden</button> -->
+
+<ng-template #login>
+    <p appHighlight>Chưa đăng nhập</p>
+</ng-template>
+
+<h1>Chọn màu(switchCase)</h1>
+<div [ngSwitch]="firtsColor">
+    <div *ngSwitchCase="'red'" style="color: red">Đỏ</div>
+    <div *ngSwitchCase="'blue'" style="color: blue">Xanh</div>
+    <div *ngSwitchCase="'yellow'" style="color: yellow">Vàng</div>
+</div>
+
+<select #chooseColor (change)="OnchangeColor(chooseColor.value)">
+ <option value="red" selected>Đỏ</option>
+ <option value="blue">Xanh</option>
+ <option value="yellow">vàng</option>
+</select>
